@@ -1,10 +1,25 @@
 name: Events Demo 1
 on:
+
   pull_request:
     types:
       - opened
+    branches:
+      - main
+      #Nombre rama con comodin
+      - 'dev-*'
+      - 'feat/**'
       
   workflow_dispatch:
+
+  push:
+    branches:
+      - main
+      #Nombre rama con comodin
+      - 'dev-*'
+      - 'feat/**'
+    paths-ignore:
+      - '.github/workflows/*'
 
 jobs:
   deploy:
